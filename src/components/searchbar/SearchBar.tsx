@@ -1,8 +1,7 @@
 import React from 'react'
-import { alpha, makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
-import { getJSDocOverrideTagNoCache } from 'typescript';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -37,9 +36,26 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
+const getSearch = async (query: string) => {
+  const response =
+      await fetch(`https://api.themoviedb.org/3/search/movie?query=${query}`,
+        { 
+          method: 'get',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${process.env.REACT_APP_TMDB_BEARER_TOKEN}`
+          }
+        }
+      )
+    console.log(await response.json())  
+}
+
+
 export default function SearchBar() {
     const classes = useStyles();
-  
+    
+    getSearch('Avengers')
+
     return (
         <div className={classes.main}>
         <div className={classes.search}>

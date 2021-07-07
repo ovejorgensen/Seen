@@ -5,7 +5,7 @@ import Wave from './wave.svg'
 export default function Background() {
     return (
         <div className='background'>
-            <img className='wave' src={Wave}/>
+            <img className='wave' src={Wave} alt='wave-svg'/>
         </div>
     )
 }

@@ -6,6 +6,8 @@ import SeriesPage  from './pages/SeriesPage/SeriesPage';
 import MoviePage  from './pages/MoviePage/MoviePage';
 import NavBar from './components/navbar/Navbar';
 
+require('dotenv').config()
+
 const App = () => (
       <Router>
         <NavBar/>
