@@ -1,4 +1,11 @@
-.App {
+.background {
   background: linear-gradient(180deg, #864EFF 0%, #5E2FC2 99.99%, rgba(196, 196, 196, 0) 100%);
   height: 100vh;
+  width: 100vw;
+  position: absolute;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
 }

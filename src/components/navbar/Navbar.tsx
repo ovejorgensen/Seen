@@ -5,32 +5,33 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
     },
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
-    toolBar: {
-      display: 'flex',
-      alignItems: 'center'
+    navBtn: {
+      marginRight: theme.spacing(8),
+      color: '#4A7C79',
+      '&:hover': {
+          borderBottom: '2px solid #4A7C79',
+          cursor: 'pointer'
+      }
     },
     title: {
       flexGrow: 1,
       color: '#45AD8E',
-      position: 'absolute',
       width: '111px',
       height: '53px',
       left: '23px',
       fontStyle: 'normal',
       fontSize: '45px',
-      lineHeight: '53px'
+      lineHeight: '53px',
     },
     appBar: {
-        backgroundColor: 'white'
+        backgroundColor: 'white',
     }
   }),
 );
@@ -41,11 +42,21 @@ export default function Navbar() {
   return (
     <div className={classes.root}>
       <AppBar className={classes.appBar}>
-        <Toolbar className={classes.toolBar}>
-          <Typography variant="h6" className={classes.title}>
-            SEEN
-          </Typography>
-        </Toolbar>
+        <Toolbar>
+            <Typography variant="h6" className={classes.title}>
+                SEEN
+            </Typography>
+            <Link to='/movies' style={{ textDecoration: 'none' }}>
+                <Typography variant="h6" className={classes.navBtn}>
+                    Movies 
+                </Typography>
+            </Link>
+            <Link to='/series' style={{ textDecoration: 'none' }}>
+                <Typography variant="h6" className={classes.navBtn}>
+                    Series 
+                </Typography>
+            </Link>
+         </Toolbar>
       </AppBar>
     </div>
   );
