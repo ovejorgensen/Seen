@@ -6,8 +6,10 @@ import Background from '../../components/background/Background'
 export default function HomePage() {
     return (
         <div className='home-page'>
-          <Background/>
-          <SearchBar/>
+          <Background wave={true}/>
+          <div className='search-bar'>
+            <SearchBar/>
+          </div>
         </div>
     )
 }

@@ -3,14 +3,9 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 
-
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     main:{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100vh'
     },
     search: {
       position: 'absolute',
@@ -58,7 +53,7 @@ export default function SearchBar() {
 
     return (
         <div className={classes.main}>
-        <div className={classes.search}>
+          <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon>add_circle</SearchIcon>
             </div>

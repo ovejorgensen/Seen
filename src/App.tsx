@@ -6,13 +6,11 @@ import SeriesPage  from './pages/SeriesPage/SeriesPage';
 import MoviePage  from './pages/MoviePage/MoviePage';
 import NavBar from './components/navbar/Navbar';
 
-require('dotenv').config()
-
 const App = () => (
       <Router>
         <NavBar/>
         <Switch>
-            <Route path="/" component={HomePage} />
+            <Route exact path="/" component={HomePage} />
             <Route path="/series" component={SeriesPage} />
             <Route path="/movies" component={MoviePage} />
         </Switch>
