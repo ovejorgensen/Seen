@@ -4,28 +4,37 @@ import { createStyles, makeStyles, Theme, Typography } from '@material-ui/core';
 import SearchBar from '../searchbar/SearchBar'
 
 const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-      paddingTop: '64px',
-      alignItems: 'center',
-    },
-    title: {
-        flexGrow: 1,
-        textAlign: 'center',
-        color: 'white',
-    },
-    screenToggler: {
-        color: 'white',
-    },
-    growItem: {
-        flexGrow: 1,
-        color: 'white'
-    },
-    container: {
-        position: 'absolute'
-    }
-  }),
+    createStyles({
+        root: {
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+        },
+        leftSide: {
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: '30px',
+            color: 'white',
+            flexGrow: 1,
+        },
+        search: {
+            marginLeft: 'auto',
+            float: 'right'
+        },
+        main: {
+            paddingTop: '64px',
+            width: '80%',
+            maxWidth: '1024px',
+            display: 'flex',
+            margin: 'auto',
+            flexDirection: 'column'
+        },
+        container: {
+            flexWrap: 'wrap'
+        }
+    }),
 );
 
 
@@ -33,27 +42,22 @@ export default function MoviePageHeader() {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
+        <main className={classes.main}>
+            <div className={classes.root}>
+                <div className={classes.leftSide}>
+                    <Typography className='typographies' variant='h2'>Movies</Typography>
+                    <Typography className='typographies' variant='h4'>watched</Typography>
+                    <Typography className='typographies' variant='h4'>to watch</Typography>
+                </div>
+                <div className={classes.search}>
+                    <SearchBar homePage={false} />
+                </div>
+            </div>
             <Grid container className={classes.container}>
-                <Grid item xs={12} md={3}>
-                    <Typography variant="h3" className={classes.title}>
-                        Movies
-                    </Typography>
-                </Grid>
-                <Grid item xs={3} md={3}>
-                     <Typography variant="h6" className={classes.screenToggler}>
-                        Seen
-                    </Typography>
-                </Grid>
-                <Grid item xs={3} md={3}>
-                    <Typography variant="h6" className={classes.growItem}>
-                        Watchlist
-                    </Typography>
-                </Grid>
-                <Grid item xs={3} md={3}>
-                    <SearchBar/>
+                <Grid item>
+
                 </Grid>
             </Grid>
-        </div>
+        </main>
     )
 }

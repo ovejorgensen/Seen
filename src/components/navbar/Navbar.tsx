@@ -39,7 +39,7 @@ export default function Navbar() {
 
   return (
     <div className={classes.root}>
-      <AppBar className={classes.appBar}>
+      <AppBar className={classes.appBar} position='relative'>
         <Toolbar>
             <Typography variant="h6" className={classes.title}>
                 SEEN

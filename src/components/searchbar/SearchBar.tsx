@@ -6,11 +6,16 @@ import InputBase from '@material-ui/core/InputBase';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     main:{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100vh'
     },
     search: {
-      position: 'absolute',
+      position: 'relative',
       borderRadius: theme.shape.borderRadius,
       backgroundColor: 'white',
+      border: '2px solid transparent',
       '&:hover': {
         border: '2px solid black' 
       }
@@ -46,13 +51,14 @@ const getSearch = async (query: string) => {
 }
 
 
-export default function SearchBar() {
+export default function SearchBar(props: { homePage: boolean; }) {
+    const homePage:boolean = props.homePage
     const classes = useStyles();
     
     getSearch('Avengers')
 
     return (
-        <div className={classes.main}>
+        <div className={homePage ? classes.main : ''}>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon>add_circle</SearchIcon>

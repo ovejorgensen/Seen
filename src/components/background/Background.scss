@@ -1,8 +1,9 @@
 .background {
   background: linear-gradient(180deg, #864EFF 0%, #5E2FC2 99.99%, rgba(196, 196, 196, 0) 100%);
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: absolute;
+  z-index: -10;
 }
 
 .wave {
